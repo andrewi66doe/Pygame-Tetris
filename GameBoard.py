@@ -88,9 +88,9 @@ class GameBoard():
 
     def check_if_scored(self):
 
-        for y in range(self.grid_height):
+        for y in xrange(self.grid_height):
             count = 0
-            for x in range(self.grid_width):
+            for x in xrange(self.grid_width):
                 if self.blocks[y][x] != 0:
                     count += 1
             if count == self.grid_width:
@@ -98,14 +98,14 @@ class GameBoard():
                 self.score += 100
 
     def move_blocks_down(self):
-        for y in range(self.grid_height - 1):
-            for x in range(self.grid_width):
+        for y in xrange(self.grid_height - 1):
+            for x in xrange(self.grid_width):
                 if self.blocks[y][x] != 0 and self.blocks[y+1][x] == 0:
                     self.blocks[y+1][x] = self.blocks[y][x]
                     self.blocks[y][x] = 0
 
     def clear_row(self, row):
-        for x in range(self.grid_width):
+        for x in xrange(self.grid_width):
             self.blocks[row][x] = 0
 
 
